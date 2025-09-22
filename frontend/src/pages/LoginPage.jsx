@@ -48,18 +48,18 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 flex items-center justify-center p-4">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-900/30 border-b border-slate-700/50">
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate("/")}>
-              <Scan className="h-8 w-8 text-emerald-400" />
-              <span className="text-xl font-bold text-white font-mono">SmartAttend AI</span>
+              <Scan className="h-8 w-8 text-blue-600" />
+              <span className="text-xl font-bold text-slate-800 font-mono">SmartAttend AI</span>
             </div>
             <Button 
               variant="ghost" 
-              className="text-slate-300 hover:text-white hover:bg-slate-800/50 backdrop-blur-sm font-mono"
+              className="text-slate-600 hover:text-slate-800 hover:bg-slate-100/50 backdrop-blur-sm font-mono"
               onClick={() => navigate("/signup")}
             >
               Sign Up
@@ -69,23 +69,23 @@ const LoginPage = () => {
       </nav>
 
       <div className="w-full max-w-md">
-        <Card className="bg-slate-800/50 backdrop-blur-md border-slate-700/50 shadow-2xl">
+        <Card className="bg-white/70 backdrop-blur-md border-slate-200/50 shadow-2xl">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold text-white font-mono">Welcome Back</CardTitle>
-            <CardDescription className="text-slate-300 font-mono">
+            <CardTitle className="text-2xl font-bold text-slate-800 font-mono">Welcome Back</CardTitle>
+            <CardDescription className="text-slate-600 font-mono">
               Sign in to your SmartAttend AI account
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="student" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 bg-slate-700/50 backdrop-blur-sm">
-                <TabsTrigger value="student" className="font-mono data-[state=active]:bg-emerald-600/80">Student</TabsTrigger>
-                <TabsTrigger value="professor" className="font-mono data-[state=active]:bg-emerald-600/80">Professor</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 bg-slate-200/50 backdrop-blur-sm">
+                <TabsTrigger value="student" className="font-mono data-[state=active]:bg-blue-600/90 data-[state=active]:text-white">Student</TabsTrigger>
+                <TabsTrigger value="professor" className="font-mono data-[state=active]:bg-blue-600/90 data-[state=active]:text-white">Professor</TabsTrigger>
               </TabsList>
               
               <TabsContent value="student" className="space-y-4 mt-6">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-slate-300 font-mono">Email</Label>
+                  <Label htmlFor="email" className="text-slate-700 font-mono">Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -93,11 +93,11 @@ const LoginPage = () => {
                     placeholder="student@university.edu"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 backdrop-blur-sm font-mono"
+                    className="bg-white/50 border-slate-300 text-slate-800 placeholder-slate-500 backdrop-blur-sm font-mono"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-slate-300 font-mono">Password</Label>
+                  <Label htmlFor="password" className="text-slate-700 font-mono">Password</Label>
                   <div className="relative">
                     <Input
                       id="password"
@@ -106,7 +106,7 @@ const LoginPage = () => {
                       placeholder="Enter your password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 backdrop-blur-sm font-mono pr-10"
+                      className="bg-white/50 border-slate-300 text-slate-800 placeholder-slate-500 backdrop-blur-sm font-mono pr-10"
                     />
                     <Button
                       type="button"
@@ -116,15 +116,15 @@ const LoginPage = () => {
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       {showPassword ? (
-                        <EyeOff className="h-4 w-4 text-slate-400" />
+                        <EyeOff className="h-4 w-4 text-slate-500" />
                       ) : (
-                        <Eye className="h-4 w-4 text-slate-400" />
+                        <Eye className="h-4 w-4 text-slate-500" />
                       )}
                     </Button>
                   </div>
                 </div>
                 <Button 
-                  className="w-full bg-emerald-600/80 hover:bg-emerald-500 text-white backdrop-blur-sm border-emerald-500/30 font-mono"
+                  className="w-full bg-blue-600/90 hover:bg-blue-700 text-white backdrop-blur-sm border-blue-500/30 font-mono"
                   onClick={() => handleLogin("student")}
                 >
                   Sign In as Student
@@ -133,7 +133,7 @@ const LoginPage = () => {
               
               <TabsContent value="professor" className="space-y-4 mt-6">
                 <div className="space-y-2">
-                  <Label htmlFor="prof-email" className="text-slate-300 font-mono">Email</Label>
+                  <Label htmlFor="prof-email" className="text-slate-700 font-mono">Email</Label>
                   <Input
                     id="prof-email"
                     name="email"
@@ -141,11 +141,11 @@ const LoginPage = () => {
                     placeholder="professor@university.edu"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 backdrop-blur-sm font-mono"
+                    className="bg-white/50 border-slate-300 text-slate-800 placeholder-slate-500 backdrop-blur-sm font-mono"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="prof-password" className="text-slate-300 font-mono">Password</Label>
+                  <Label htmlFor="prof-password" className="text-slate-700 font-mono">Password</Label>
                   <div className="relative">
                     <Input
                       id="prof-password"
@@ -154,7 +154,7 @@ const LoginPage = () => {
                       placeholder="Enter your password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 backdrop-blur-sm font-mono pr-10"
+                      className="bg-white/50 border-slate-300 text-slate-800 placeholder-slate-500 backdrop-blur-sm font-mono pr-10"
                     />
                     <Button
                       type="button"
@@ -164,15 +164,15 @@ const LoginPage = () => {
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       {showPassword ? (
-                        <EyeOff className="h-4 w-4 text-slate-400" />
+                        <EyeOff className="h-4 w-4 text-slate-500" />
                       ) : (
-                        <Eye className="h-4 w-4 text-slate-400" />
+                        <Eye className="h-4 w-4 text-slate-500" />
                       )}
                     </Button>
                   </div>
                 </div>
                 <Button 
-                  className="w-full bg-emerald-600/80 hover:bg-emerald-500 text-white backdrop-blur-sm border-emerald-500/30 font-mono"
+                  className="w-full bg-blue-600/90 hover:bg-blue-700 text-white backdrop-blur-sm border-blue-500/30 font-mono"
                   onClick={() => handleLogin("professor")}
                 >
                   Sign In as Professor
@@ -181,14 +181,14 @@ const LoginPage = () => {
             </Tabs>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button variant="link" className="text-emerald-400 hover:text-emerald-300 font-mono">
+            <Button variant="link" className="text-blue-600 hover:text-blue-700 font-mono">
               Forgot Password?
             </Button>
-            <p className="text-slate-400 text-sm font-mono">
+            <p className="text-slate-500 text-sm font-mono">
               Don't have an account?{" "}
               <Button 
                 variant="link" 
-                className="text-emerald-400 hover:text-emerald-300 p-0 h-auto font-mono"
+                className="text-blue-600 hover:text-blue-700 p-0 h-auto font-mono"
                 onClick={() => navigate("/signup")}
               >
                 Sign up here

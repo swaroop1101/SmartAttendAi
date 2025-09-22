@@ -7,6 +7,7 @@ import SignupPage from "./pages/SignupPage";
 import ProfessorDashboard from "./pages/ProfessorDashboard";
 import StudentPortal from "./pages/StudentPortal";
 import QRScanner from "./pages/QRScanner";
+import FacialRecognition from "./pages/FacialRecognition";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/professor-dashboard" element={<ProfessorDashboard />} />
           <Route path="/student-portal" element={<StudentPortal />} />
           <Route path="/qr-scanner" element={<QRScanner />} />
+          <Route path="/facial-recognition" element={<FacialRecognition />} />
         </Routes>
         <Toaster />
       </BrowserRouter>
