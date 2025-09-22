@@ -284,7 +284,7 @@ const ProfessorDashboard = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <span className="text-slate-300 font-mono">Regular (>80%)</span>
+                        <span className="text-slate-300 font-mono">Regular (&gt;80%)</span>
                       </div>
                       <span className="text-white font-mono">65%</span>
                     </div>
